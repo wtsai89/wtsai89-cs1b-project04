@@ -4,7 +4,7 @@ package cellularData;
  *  Creates one object of type CSVReader class, which reads input from a CSV file. Uses
  *  the attributes stored in CSVReader object to create objects of type Country class.
  *
- * @author Foothill College, [YOUR NAME HERE]
+ * @author Foothill College, William Tsai
  */
 public class TestCountry 
 {
@@ -180,5 +180,46 @@ public class TestCountry
 		//
 		// TODO: Also, make sure to test for other invalid requests for range of years.
 		//
+		try
+		{
+			countryNum = 204;
+			requestedStart = 2014;
+			requestedEndYear = 2010;
+			System.out.printf("Requesting subscriptions for \"%s\" between %d - %d. \n", countryNames[countryNum], requestedStart, requestedEndYear);
+			totalSubscriptions = countries[countryNum].getNumSubscriptionsForPeriod(requestedStart,requestedEndYear);
+			System.out.printf("Total subscriptions = %.2f \n\n", totalSubscriptions);
+		}
+		catch (IllegalArgumentException ex)
+		{
+			System.out.println(ex.getMessage());
+		}
+
+		try
+		{
+			countryNum = 200;
+			requestedStart = 1800;
+			requestedEndYear = 2020;
+			System.out.printf("Requesting subscriptions for \"%s\" between %d - %d. \n", countryNames[countryNum], requestedStart, requestedEndYear);
+			totalSubscriptions = countries[countryNum].getNumSubscriptionsForPeriod(requestedStart,requestedEndYear);
+			System.out.printf("Total subscriptions = %.2f \n\n", totalSubscriptions);
+		}
+		catch (IllegalArgumentException ex)
+		{
+			System.out.println(ex.getMessage());
+		}
+
+		try
+		{
+			countryNum = 179;
+			requestedStart = 2004;
+			requestedEndYear = 2010;
+			System.out.printf("Requesting subscriptions for \"%s\" between %d - %d. \n", countryNames[countryNum], requestedStart, requestedEndYear);
+			totalSubscriptions = countries[countryNum].getNumSubscriptionsForPeriod(requestedStart,requestedEndYear);
+			System.out.printf("Total subscriptions = %.2f \n\n", totalSubscriptions);
+		}
+		catch (IllegalArgumentException ex)
+		{
+			System.out.println(ex.getMessage());
+		}
 	}
 }
