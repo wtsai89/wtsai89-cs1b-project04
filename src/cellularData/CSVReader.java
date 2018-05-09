@@ -13,7 +13,7 @@ public class CSVReader {
 
     /**
      *
-     * @param filename
+     * @param filename filename to be read
      */
     public CSVReader(String filename)
     {
@@ -70,21 +70,37 @@ public class CSVReader {
 
     }
 
+    /**
+     *
+     * @return countryNames
+     */
     public String[] getCountryNames()
     {
         return countryNames;
     }
 
+    /**
+     *
+     * @return getYearLabels
+     */
     public int[] getYearLabels()
     {
         return yearLabels;
     }
 
+    /**
+     *
+     * @return getParsedTable
+     */
     public double[][] getParsedTable()
     {
         return cellularDataTable;
     }
 
+    /**
+     *
+     * @return getNumberOfYears
+     */
     public int getNumberOfYears()
     {
         return yearLabels.length;

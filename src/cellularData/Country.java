@@ -1,10 +1,18 @@
 package cellularData;
 
+/**
+ * Stores the entire subscription data for a single country
+ */
 public class Country {
     private String name;
     private SubscriptionYear[] subscriptionsPerYear;
     private int index, startingYear, endingYear;
 
+    /**
+     *
+     * @param n sets the country name
+     * @param years sets the length of the subscriptionsPerYear array
+     */
     public Country(String n, int years)
     {
         name = n;
@@ -12,6 +20,11 @@ public class Country {
         index = 0;
     }
 
+    /**
+     * Creates a new SubscriptionYear object and saves it in subscriptions array
+     * @param year
+     * @param subscriptions
+     */
     public void addSubscriptionYear(int year, double subscriptions)
     {
         subscriptionsPerYear[index] = new SubscriptionYear(year, subscriptions);
@@ -22,8 +35,18 @@ public class Country {
         index++;
     }
 
+    /**
+     * accessor method for name
+     * @return
+     */
     public String getName() { return name; }
 
+    /**
+     * returns the total number of subscriptions between start and end years
+     * @param start
+     * @param end
+     * @return
+     */
     public double getNumSubscriptionsForPeriod(int start, int end)
     {
         if(start > end)
@@ -48,6 +71,10 @@ public class Country {
         return sum;
     }
 
+    /**
+     * displays the country name and all of the subscriptions in a single formatted line
+     * @return
+     */
     public String toString()
     {
         String s = String.format("%-20s", name);
