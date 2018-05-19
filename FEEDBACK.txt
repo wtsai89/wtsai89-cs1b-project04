@@ -1,0 +1,23 @@
+FEEDBACK:
+
+Good implementation of class Country. 
+    Consider leveraging the toString() method of class SubscriptionYear 
+    instead of directly calling the accessor method.
+
+
+Good testing of your implementation.
+
+
+-1 Incomplete implementation of class Country getNumSubscriptionsForPeriod() method 
+   should output the total subscriptions if an existing year exists within the requested
+   range instead of just outputting an error message
+    "Error: Both starting year and ending year are out of range."
+   See excerpt from project description: 
+	" getNumSubscriptionsForPeriod() method ...
+	  NOTE: If the client requests an invalid start or an invalid end year, only 
+	  return the total for the range within the requested year that is valid."
+  
+  Next time minus two for this.
+  
+-Bita.
+
